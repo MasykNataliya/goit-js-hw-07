@@ -33,3 +33,16 @@ const allUsers = [
 ];
 
 console.log(sortByDescendingFriendCount(allUsers));
+
+// Знаходимо потрібні елементи
+const nameInput = document.querySelector("#name-input");
+const nameOutput = document.querySelector("#name-output");
+
+// Прослуховуємо подію input
+nameInput.addEventListener("input", () => {
+  // Очищаємо значення від пробілів по краях
+  const trimmedValue = nameInput.value.trim();
+
+  // Якщо інпут порожній або лише пробіли → Anonymous
+  nameOutput.textContent = trimmedValue === "" ? "Anonymous" : trimmedValue;
+});
